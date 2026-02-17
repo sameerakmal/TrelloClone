@@ -1,7 +1,6 @@
-import axios from "axios";
+import api from "../api/axios";
 import React from "react";
 import { useState } from "react";
-import { BASE_URL } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
 
 
@@ -23,9 +22,9 @@ const Login = () => {
         setError("Fill all fields");
         return;
       }
-      const res = await axios.post(BASE_URL + "/login", {
+      const res = await api.post("/login", {
         email, password
-      }, {withCredentials : true})
+      });
       navigate("/boards");
     }catch(err){
       setError(err?.response?.data);
@@ -38,9 +37,9 @@ const Login = () => {
     setError('')
     setLoading(true)
     try{
-      const res = await axios.post(BASE_URL + "/signup", {
+      const res = await api.post("/register", {
         name, email, password
-      }, {withCredentials : true})
+      });
     }catch(err){
       setError(err?.response?.data);
       console.error(err.response?.data || err.message);

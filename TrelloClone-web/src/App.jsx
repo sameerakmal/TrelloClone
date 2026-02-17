@@ -2,9 +2,8 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-
 import './index.css'
 import Login from './pages/Login'
 import Boards from './pages/Boards'
-import { BASE_URL } from './utils/constants';
 import { useEffect } from 'react';
-import axios from 'axios';
+import api from './api/axios';
 import BoardPage from './pages/BoardPage';
 import Navbar from './components/Navbar';
 import { SearchProvider } from './context/SearchContext';
@@ -15,7 +14,7 @@ function App() {
 
   const fetchBoards = async() => {
     try{
-      await axios.get(BASE_URL + "/boards", {withCredentials : true});
+      await api.get("/boards");
     }
     catch(err){
       if(err.status === 401){

@@ -1,2 +1,2 @@
-export const BASE_URL = location.hostname === "localhost" ? "http://localhost:4000" : "https://devtinder-zurl.onrender.com";
+export const BASE_URL = location.hostname === "localhost" ? "http://localhost:4000" : "https://trelloclone-back.onrender.com";
 
