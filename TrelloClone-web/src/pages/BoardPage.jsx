@@ -67,7 +67,7 @@ const BoardPage = () => {
       .find(row => row.startsWith('token='))
       ?.split('=')[1];
 
-    const socket = io("http://localhost:4000", {
+    const socket = io("https://trelloclone-back.onrender.com", {
       withCredentials: true,
       auth: { token }
     });
