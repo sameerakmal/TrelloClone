@@ -40,6 +40,7 @@ const Login = () => {
       const res = await api.post("/signup", {
         name, email, password
       });
+      navigate("/boards");
     }catch(err){
       setError(err?.response?.data);
       console.error(err.response?.data || err.message);
