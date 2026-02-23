@@ -37,7 +37,7 @@ const Login = () => {
     setError('')
     setLoading(true)
     try{
-      const res = await api.post("/register", {
+      const res = await api.post("/signup", {
         name, email, password
       });
     }catch(err){
